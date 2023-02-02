@@ -5,6 +5,7 @@ export default class Login extends React.Component {
         name: '',
         password: '',
         remember: false,
+
     }
 
     handleInputChange = (event) => {
@@ -17,10 +18,6 @@ export default class Login extends React.Component {
             { 
                 [name]: type === 'checkbox' ? checked : value,
             })
-    }
-
-    onLogin = () => {
-        
     }
 
     componentDidUpdate() {
@@ -49,16 +46,6 @@ export default class Login extends React.Component {
                     checked={this.state.remember}
                     onChange={this.handleInputChange}
                 />
-
-                <button 
-                    disabled={!this.state.name || !this.state.password}  
-                    onClick={this.onLogin} 
-                          
-                >
-                LOG IN 
-
-                </button>
-
 
             </div>
         )
