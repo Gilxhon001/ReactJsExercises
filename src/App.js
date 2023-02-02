@@ -1,6 +1,7 @@
 import React from "react";
 import { Hello } from "./Hello";
-import InteractiveWelcome from "./InteractiveWelcome ";
+import Login from "./Login";
+// import InteractiveWelcome from "./InteractiveWelcome ";
 // import ClickTracker from "./ClickTracker";
 // import { Welcome } from "./Welcome";
 // import ClickCounter from "./ClickCounter";
@@ -22,7 +23,9 @@ export class App extends React.Component {
 
                 {/* <ClickTracker /> */}
 
-                <InteractiveWelcome />
+                {/* <InteractiveWelcome /> */}
+
+                <Login />
 
             </div>
         )
