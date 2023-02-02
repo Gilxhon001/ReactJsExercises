@@ -1,7 +1,8 @@
 import React from "react";
-import ClickTracker from "./ClickTracker";
 import { Hello } from "./Hello";
-import { Welcome } from "./Welcome";
+import InteractiveWelcome from "./InteractiveWelcome ";
+// import ClickTracker from "./ClickTracker";
+// import { Welcome } from "./Welcome";
 // import ClickCounter from "./ClickCounter";
 // import { CounterDisplay } from "./CounterDisplay";
 // import { Counter } from "./Counter";
@@ -13,13 +14,15 @@ export class App extends React.Component {
             <div>
                 <Hello />
 
-                <Welcome name={<strong>Johnny</strong>} age={22} />
+                {/* <Welcome name={<strong>Johnny</strong>} age={22} /> */}
 
                 {/* <CounterDisplay count={<Counter />}/> */}
 
                 {/* <ClickCounter /> */}
 
-                <ClickTracker />
+                {/* <ClickTracker /> */}
+
+                <InteractiveWelcome />
 
             </div>
         )
