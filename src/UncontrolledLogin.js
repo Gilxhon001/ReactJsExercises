@@ -48,12 +48,20 @@ export default class UncontrolledLogin extends React.Component {
         console.log(this.state.password, passwordValue);
     }
 
+    componentDidMount() {
+        this.refInput.focus();
+      }
+
     render() {
         return (
             <div>
                 <h3>Uncontrolled Form</h3>
                 <form onSubmit={this.handleFormSubmit}>
-                    <input name="name" onChange={this.handleChangeN} />
+                    <input 
+                    name="name" 
+                    onChange={this.handleChangeN} 
+                    ref={(input) => { this.refInput = input; }}
+                    />
                     <br />
                     <input name="password" type="password" onChange={this.handleChangeP} />
                     <br />
@@ -67,7 +75,8 @@ export default class UncontrolledLogin extends React.Component {
                     </button>
                     <button 
                         disabled={this.state.name && this.state.password}
-                        type="reset">
+                        type="reset"
+                        >
                     Reset
                     </button>
                 </form>
