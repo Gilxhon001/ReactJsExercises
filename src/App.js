@@ -1,6 +1,7 @@
 import React from "react";
 import { Hello } from "./Hello";
-import Login from "./Login";
+import UncontrolledLogin from "./UncontrolledLogin";
+// import Login from "./Login";
 // import InteractiveWelcome from "./InteractiveWelcome ";
 // import ClickTracker from "./ClickTracker";
 // import { Welcome } from "./Welcome";
@@ -11,39 +12,12 @@ import Login from "./Login";
 
 export class App extends React.Component {
     
-    constructor() {
-        super() 
-
-        this.state = {
-            submitted: false,
-        }
-    }
-
-    handleLogin = () => {
-        this.setState(
-            {
-                submitted: true
-            }
-        )
-    }
-
     render() {
         return (
             <div>
                 <Hello />
 
-                {/* <Welcome name={<strong>Johnny</strong>} age={22} /> */}
-
-                {/* <CounterDisplay count={<Counter />}/> */}
-
-                {/* <ClickCounter /> */}
-
-                {/* <ClickTracker /> */}
-
-                {/* <InteractiveWelcome /> */}
-
-                <Login submitted={this.handleLogin}/>
-
+                <UncontrolledLogin />
             </div>
         )
     }
