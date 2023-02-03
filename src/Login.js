@@ -22,6 +22,16 @@ export default class Login extends React.Component {
         )
     }
 
+    handleResetState = () => {
+        this.setState(
+            {
+                name: '',
+                password: '',
+                remember: false,
+            }
+        )
+    }
+
     onLogin = () => {
         this.props.submitted()
         console.log(this.state)
@@ -34,14 +44,14 @@ export default class Login extends React.Component {
                 <input
                     name="name"
                     onChange={this.handleInputChange}
-                    value={this.state.value}
+                    value={this.state.name}
                 />
 
                 <input
                     name="password"
                     type="password"
                     onChange={this.handleInputChange}
-                    value={this.state.value}
+                    value={this.state.password}
                 />
 
                 <br/>
@@ -56,12 +66,19 @@ export default class Login extends React.Component {
                 <br/>
                 
                 <button 
-                    disabled={!this.state.name || !this.state.password }  
+                    disabled={!this.state.name || !this.state.password}  
                     onClick={this.onLogin} 
-                    
                 >
 
                 Log In
+
+                </button>
+
+                <button 
+                    disabled={!this.state.name && !this.state.password}
+                    onClick={this.handleResetState}>
+
+                Reset
 
                 </button>
 
