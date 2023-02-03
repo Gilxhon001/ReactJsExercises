@@ -10,6 +10,23 @@ import Login from "./Login";
 
 
 export class App extends React.Component {
+    
+    constructor() {
+        super() 
+
+        this.state = {
+            submitted: false,
+        }
+    }
+
+    handleLogin = () => {
+        this.setState(
+            {
+                submitted: true
+            }
+        )
+    }
+
     render() {
         return (
             <div>
@@ -25,7 +42,7 @@ export class App extends React.Component {
 
                 {/* <InteractiveWelcome /> */}
 
-                <Login />
+                <Login submitted={this.handleLogin}/>
 
             </div>
         )

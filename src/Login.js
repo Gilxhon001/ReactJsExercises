@@ -1,11 +1,12 @@
 import React from "react";
 
 export default class Login extends React.Component {
+
+    //input 
     state = {
         name: '',
         password: '',
         remember: false,
-
     }
 
     handleInputChange = (event) => {
@@ -17,11 +18,14 @@ export default class Login extends React.Component {
         this.setState(
             { 
                 [name]: type === 'checkbox' ? checked : value,
-            })
+            }
+        )
     }
 
-    componentDidUpdate() {
+    onLogin = () => {
+        this.props.submitted()
         console.log(this.state)
+        console.log("Submitted")
     }
 
     render() {
@@ -40,12 +44,26 @@ export default class Login extends React.Component {
                     value={this.state.value}
                 />
 
+                <br/>
+
                 <input
                     name="remember"
                     type="checkbox"
                     checked={this.state.remember}
                     onChange={this.handleInputChange}
                 />
+
+                <br/>
+                
+                <button 
+                    disabled={!this.state.name || !this.state.password }  
+                    onClick={this.onLogin} 
+                    
+                >
+
+                Log In
+
+                </button>
 
             </div>
         )
