@@ -15,27 +15,42 @@ export class ToDoList extends React.Component {
         event.preventDefault();
         this.setState({ 
             items: [...this.state.items, this.state.value],
-            value: '', //Did that here
+            value: '',
         })
+    };
+
+    handleReset = () => {
+        this.setState({ 
+            items: [] 
+        });
     };
 
     render() {
         return (
             <div>
+            
                 <input 
                     type="text" 
                     value={this.state.value} 
                     onChange={this.handleChange} 
                 />
+
                 <button
                     onClick={this.handleSubmit}
                     disabled={this.state.value.length !== 0 ? false : true}
-                    >Submit</button>
+                >Submit</button>
+
+                <button 
+                    onClick={this.handleReset}
+                    disabled={this.state.items.length !== 0 ? false : true}
+                >Reset</button>
+
                 <ul>
                     {this.state.items.map((item, index) => (
                         <li key={index}>{item}</li>
                     ))}
                 </ul>
+
             </div>
         )
     }
