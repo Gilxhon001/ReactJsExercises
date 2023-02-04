@@ -1,11 +1,11 @@
 import React from "react";
 import { Hello } from "./Hello";
-import { ToDoList } from "./TodoList";
+import Welcome from "./Welcome";
+// import { ToDoList } from "./TodoList";
 // import UncontrolledLogin from "./UncontrolledLogin";
 // import Login from "./Login";
 // import InteractiveWelcome from "./InteractiveWelcome ";
 // import ClickTracker from "./ClickTracker";
-// import { Welcome } from "./Welcome";
 // import ClickCounter from "./ClickCounter";
 // import { CounterDisplay } from "./CounterDisplay";
 // import { Counter } from "./Counter";
@@ -17,8 +17,7 @@ export class App extends React.Component {
         return (
             <div>
                 <Hello />
-
-                <ToDoList />
+                <Welcome name="Gilxhon" age={21}/>
             </div>
         )
     }

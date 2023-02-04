@@ -1,0 +1,9 @@
+.welcome {
+    border: 3px solid;
+    border-radius: 10px;
+    border-color: aqua;
+    background-color: lightskyblue;
+    padding: 20px;
+    width: 25vw;
+    text-align: center;
+}
