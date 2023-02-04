@@ -32,16 +32,6 @@ export class App extends React.Component {
             <div>
                 <Hello />
 
-                {/* <Welcome name={<strong>Johnny</strong>} age={22} /> */}
-
-                {/* <CounterDisplay count={<Counter />}/> */}
-
-                {/* <ClickCounter /> */}
-
-                {/* <ClickTracker /> */}
-
-                {/* <InteractiveWelcome /> */}
-
                 <Login submitted={this.handleLogin}/>
 
             </div>

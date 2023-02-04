@@ -29,6 +29,7 @@ export default class Login extends React.Component {
     }
 
     render() {
+
         return (
             <div>
                 <input
@@ -58,7 +59,7 @@ export default class Login extends React.Component {
                 <button 
                     disabled={!this.state.name || !this.state.password }  
                     onClick={this.onLogin} 
-                    
+                    className={this.state.password.length >= 8 ? 'btn btn--green' : 'btn btn--red'}
                 >
 
                 Log In

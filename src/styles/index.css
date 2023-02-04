@@ -1,0 +1,20 @@
+.btn {
+    padding: 5px ;
+    border: none;
+    border-radius: 5px;
+    color: aliceblue;
+}
+
+.btn:disabled {
+    background-color: grey;
+    color: lightgrey;
+}
+
+.btn--red {
+    background-color: red ;
+}
+
+.btn--green {
+    background-color: green ;
+}
+
