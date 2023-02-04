@@ -15,7 +15,7 @@ export class ToDoList extends React.Component {
         event.preventDefault();
         this.setState({ 
             items: [...this.state.items, this.state.value],
-            value: '',
+            value: '', //Did that here
         })
     };
 
