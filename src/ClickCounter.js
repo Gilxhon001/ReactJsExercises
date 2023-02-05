@@ -14,9 +14,14 @@ export default class ClickCounter extends React.Component {
 
 
     render() {
+
+        const style = {
+            color: this.state.count % 2 === 0 ? 'green' : 'red',   
+        }
+
         return (
             <div>
-                <h3>Count: {this.state.count}</h3>
+                <h3 style={style}>Count: {this.state.count}</h3>
                 <button onClick={this.handleCounterIncrement}>Increment</button>
             </div>
         )
