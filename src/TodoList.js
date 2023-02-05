@@ -8,41 +8,39 @@ export default class ToDoList extends React.Component {
     };
 
     handleChange = (event) => {
-        this.setState({value: event.target.value});
+        this.setState({ value: event.target.value });
     };
-    
+
     handleSubmit = (event) => {
         event.preventDefault();
-        this.setState({ 
+        this.setState({
             items: [...this.state.items, this.state.value],
             value: '',
         })
     };
 
     handleReset = () => {
-        this.setState({ 
-            items: [] 
+        this.setState({
+            items: []
         });
     };
 
     handleRemove = (index) => {
         this.setState((prevState) => {
             return {
-              items: prevState.items.filter((item, i) => i !== index),
+                items: prevState.items.filter((item, i) => i !== index),
             };
         });
     }
 
     render() {
         return (
-
             <div className="p-10">
-            
-                <input 
+                <input
                     className="border border-gray-400 p-2 mb-2"
-                    type="text" 
-                    value={this.state.value} 
-                    onChange={this.handleChange} 
+                    type="text"
+                    value={this.state.value}
+                    onChange={this.handleChange}
                 />
 
                 <button
@@ -51,7 +49,7 @@ export default class ToDoList extends React.Component {
                     disabled={this.state.value.length !== 0 ? false : true}
                 >Submit</button>
 
-                <button 
+                <button
                     className="bg-red-500 text-white p-2"
                     onClick={this.handleReset}
                     disabled={this.state.items.length !== 0 ? false : true}
@@ -67,7 +65,6 @@ export default class ToDoList extends React.Component {
                         </li>
                     ))}
                 </ul>
-
             </div>
         )
     }
