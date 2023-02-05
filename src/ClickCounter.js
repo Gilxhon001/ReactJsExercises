@@ -1,4 +1,5 @@
 import React from "react";
+import Button from 'react-bootstrap/Button';
 
 export default class ClickCounter extends React.Component {
 
@@ -17,7 +18,7 @@ export default class ClickCounter extends React.Component {
         return (
             <div>
                 <h3>Count: {this.state.count}</h3>
-                <button onClick={this.handleCounterIncrement}>Increment</button>
+                <Button variant="outline-primary" onClick={this.handleCounterIncrement}>Increment</Button>
             </div>
         )
     }

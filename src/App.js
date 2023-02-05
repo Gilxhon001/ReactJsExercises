@@ -2,21 +2,19 @@ import React from "react";
 import { Hello } from "./Hello";
 import { Welcome } from "./Welcome";
 import ClickCounter from "./ClickCounter";
-// import { CounterDisplay } from "./CounterDisplay";
-// import { Counter } from "./Counter";
-
+import { Col } from "react-bootstrap";
 
 export class App extends React.Component {
     render() {
         return (
-            <div>
-                <Hello />
-                <Welcome name={<strong>Johnny</strong>} age={22} />
-                
-                {/* <CounterDisplay count={<Counter />}/> */}
+            <Col>
+                <div className="text-center mt-5">
+                    <Hello />
+                    <Welcome name={<strong>Johnny</strong>} age={22} />
 
-                <ClickCounter />
-            </div>
+                    <ClickCounter />
+                </div>
+            </Col>
         )
     }
 }
