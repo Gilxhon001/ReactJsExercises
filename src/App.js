@@ -1,6 +1,6 @@
 import React from "react";
-import { Counter } from "./Counter";
 import { Hello } from "./Hello";
+import Sum from "./Sum";
 import Welcome from "./Welcome";
 
 export class App extends React.Component {
@@ -9,7 +9,7 @@ export class App extends React.Component {
             <div>
                 <Hello />
                 <Welcome name={<strong>Chelli</strong>} age={22} />
-                <Counter />
+                <Sum numbers={[1,2,3,4]}/>
             </div>
         )
     }
