@@ -55,7 +55,7 @@ export default class ToDoList extends React.Component {
                     disabled={this.state.items.length !== 0 ? false : true}
                 >Reset</button>
 
-                {this.props.render(this.state.items, this.handleRemove)}
+                {this.props.children(this.state.items, this.handleRemove)}
             </div>
         )
     }

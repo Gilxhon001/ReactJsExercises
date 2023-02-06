@@ -6,8 +6,8 @@ export class App extends React.Component {
     render() {
         return (
             <Container tittle="To Do List">
-                <TodoList
-                    render={(items, handleRemoveItem) => {
+                <TodoList>
+                    {(items, handleRemoveItem) => {
                         return <ul className="mt-4 w-1/3">
                             {items.map((item, index) => (
                                 <li key={index} className="flex justify-between items-center mb-2">
@@ -21,7 +21,7 @@ export class App extends React.Component {
                             ))}
                         </ul>
                     }}
-                />
+                </TodoList>
             </Container>
         )
     }
