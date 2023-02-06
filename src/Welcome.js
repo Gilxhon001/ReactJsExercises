@@ -1,11 +1,11 @@
 import React from "react";
 import { Age } from "./Age";
 
-const Welcome = (name, age) => {
+const Welcome = (props) => {
     return (
         <>
-            <p>Welcome, {name}!</p>
-            {age > 18 && <Age value={age} />}
+            <p>Welcome, {props.name}!</p>
+            {props.age > 18 && <Age value={props.age} />}
         </>
     );
 };
