@@ -9,7 +9,7 @@ export default class DisplayLanguage extends React.Component {
     render() {
         return <LanguageContext.Consumer>
             {(Language) => {
-                return <div>{Strings[Language]}</div>
+                return <h1>{Strings[Language]}</h1>
             }}
         </LanguageContext.Consumer>
     }

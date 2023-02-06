@@ -25,7 +25,6 @@ export class App extends React.Component {
 
                 <LanguageContext.Provider value={this.state.language}>
                     <Container tittle={<DisplayLanguage />} />
-
                 </LanguageContext.Provider>
             </Container>
         )
