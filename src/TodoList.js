@@ -14,7 +14,7 @@ export default class ToDoList extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.setState({
-            items: [...this.state.items, this.state.value],
+            items: [this.state.value, ...this.state.items],
             value: '',
         })
     };
@@ -37,34 +37,25 @@ export default class ToDoList extends React.Component {
         return (
             <div className="p-10">
                 <input
-                    className="border border-gray-400 p-2 mb-2"
+                    className="border border-gray-400 p-2 mb-2 hover:scale-105"
                     type="text"
                     value={this.state.value}
                     onChange={this.handleChange}
                 />
 
                 <button
-                    className="bg-blue-500 text-white p-2 mr-2"
+                    className="text-white p-2 mr-2 rounded-r-lg transition ease-in-out delay-50 bg-blue-500 hover:rounded-lg hover:scale-110 hover:bg-indigo-500 duration-100"
                     onClick={this.handleSubmit}
                     disabled={this.state.value.length !== 0 ? false : true}
                 >Submit</button>
 
                 <button
-                    className="bg-red-500 text-white p-2"
+                    className="text-white p-2 mr-2 rounded-lg transition ease-in-out delay-50 bg-red-500 hover:-translate-y-1 hover:scale-110 hover:bg-orange-500 duration-300"
                     onClick={this.handleReset}
                     disabled={this.state.items.length !== 0 ? false : true}
                 >Reset</button>
 
-                <ul className="mt-4 w-1/3">
-                    {this.state.items.map((item, index) => (
-                        <li key={index} className="flex justify-between items-center mb-2">
-                            <div className="flex-1 w-5/6">{item}</div>
-                            <button className="bg-red-500 text-white p-2 rounded-md w-1/6" onClick={() => this.handleRemove(index)}>
-                                Remove
-                            </button>
-                        </li>
-                    ))}
-                </ul>
+                {this.props.render(this.state.items, this.handleRemove)}
             </div>
         )
     }
