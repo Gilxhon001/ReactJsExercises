@@ -1,15 +1,32 @@
 import React, { useState } from "react";
 
-const Login = ({}) => {
-    const [username, setUserame] = useState("") ;
+const Login = () => {
+    const [username, setUsername] = useState("") ;
     const [password, setPassword] = useState("") ;
     const [remember, setRemember] = useState(false) ;
 
     const handleInputChange = (event) => {
+        const type = event.target.type;
+        const value = event.target.value; 
+        const checked = event.target.checked;        
 
-        setUserame(event.target.value) ;
-        setPassword(event.target.value)
+        if (type === "password"){
+            setUsername(value)
+        }
 
+        if (type === "name"){
+            setPassword(value)
+        }
+
+        if (type === "remember"){
+            setRemember(checked)
+        }
+
+    }
+
+    const onLogin = () => {
+        console.log({username, password, remember })
+        console.log("Submitted")
     }
 
     return (
@@ -40,7 +57,7 @@ const Login = ({}) => {
                         
                         <button 
                             disabled={!username || !password}  
-                            onClick={this.onLogin} 
+                            onClick={onLogin} 
                             
                         >
         
@@ -52,6 +69,7 @@ const Login = ({}) => {
                 )
 }
 
+export default Login ;
 // export default class Login extends React.Component {
 
 //     //input 

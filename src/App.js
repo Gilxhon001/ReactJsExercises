@@ -1,50 +1,18 @@
 import React from "react";
 import { Hello } from "./Hello";
 import Login from "./Login";
-// import InteractiveWelcome from "./InteractiveWelcome ";
-// import ClickTracker from "./ClickTracker";
-// import { Welcome } from "./Welcome";
-// import ClickCounter from "./ClickCounter";
-// import { CounterDisplay } from "./CounterDisplay";
-// import { Counter } from "./Counter";
 
 
-export class App extends React.Component {
-    
-    constructor() {
-        super() 
+const App = () => {
+    return (
+        <div>
+            <Hello />
 
-        this.state = {
-            submitted: false,
-        }
-    }
 
-    handleLogin = () => {
-        this.setState(
-            {
-                submitted: true
-            }
-        )
-    }
+            <Login />
 
-    render() {
-        return (
-            <div>
-                <Hello />
-
-                {/* <Welcome name={<strong>Johnny</strong>} age={22} /> */}
-
-                {/* <CounterDisplay count={<Counter />}/> */}
-
-                {/* <ClickCounter /> */}
-
-                {/* <ClickTracker /> */}
-
-                {/* <InteractiveWelcome /> */}
-
-                <Login submitted={this.handleLogin}/>
-
-            </div>
-        )
-    }
+        </div>
+    )
 }
+
+export default App ;
