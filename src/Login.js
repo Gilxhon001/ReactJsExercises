@@ -1,27 +1,20 @@
 import React, { useState } from "react";
 
 const Login = () => {
-    const [username, setUsername] = useState("") ;
-    const [password, setPassword] = useState("") ;
-    const [remember, setRemember] = useState(false) ;
+    let [username, setUsername] = useState("") ;
+    let [password, setPassword] = useState("") ;
+    let [remember, setRemember] = useState(false) ;
 
-    const handleInputChange = (event) => {
-        const type = event.target.type;
-        const value = event.target.value; 
-        const checked = event.target.checked;        
+    const handleUsername = (event) => {
+        setUsername(event.target.value)
+    }
 
-        if (type === "password"){
-            setUsername(value)
-        }
+    const handlePassword = (event) => {
+        setPassword(event.target.value)
+    }
 
-        if (type === "name"){
-            setPassword(value)
-        }
-
-        if (type === "remember"){
-            setRemember(checked)
-        }
-
+    const handleRemember = (event) => {
+        setRemember(event.target.checked)
     }
 
     const onLogin = () => {
@@ -33,14 +26,14 @@ const Login = () => {
                     <div>
                         <input
                             name="name"
-                            onChange={handleInputChange}
+                            onChange={handleUsername}
                             value={username}
                         />
         
                         <input
                             name="password"
                             type="password"
-                            onChange={handleInputChange}
+                            onChange={handlePassword}
                             value={password}
                         />
         
@@ -50,7 +43,7 @@ const Login = () => {
                             name="remember"
                             type="checkbox"
                             checked={remember}
-                            onChange={handleInputChange}
+                            onChange={handleRemember}
                         />
         
                         <br/>
