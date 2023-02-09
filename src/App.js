@@ -3,6 +3,7 @@ import React from "react";
 import Container from "./Container";
 import { ClickCounter } from "./ClickCounter";
 import Counter from "./Counter";
+import GithubUser from "./GithubUser";
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
     return (
         <Container tittle="To Do List">
             <Counter />
+            <GithubUser username="Gilxhon001"/>
         </Container>
     )
 }
