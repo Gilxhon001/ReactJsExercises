@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import CounterButton from "./CounterButton";
 
 export const ClickCounter = ({incrementValue=1, startingValue=0, onCounterChange}) => {
@@ -7,12 +7,6 @@ export const ClickCounter = ({incrementValue=1, startingValue=0, onCounterChange
     const handleCounterIncrement = () => {
         setCount(count + incrementValue)
     }
-
-    useEffect(() => {
-        if (onCounterChange) {
-            onCounterChange(count);
-        }
-    }, [count, onCounterChange]);
 
     return (
         <div>
