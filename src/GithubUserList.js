@@ -19,7 +19,7 @@ const GithubUserList = () => {
                 <button className="bg-blue-500 text-white p-2 mr-2" type="submit">Add username</button>
             </form>
             {usernames.map(username => (
-                <Container>
+                <Container tittle={username}>
                     <GithubUser key={username} username={username} />
                 </Container>
             ))}
