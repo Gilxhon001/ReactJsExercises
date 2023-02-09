@@ -2,6 +2,7 @@ import React from "react";
 // import TodoList from "./TodoList";
 import Container from "./Container";
 import { ClickCounter } from "./ClickCounter";
+import Counter from "./Counter";
 
 const App = () => {
 
@@ -11,7 +12,7 @@ const App = () => {
 
     return (
         <Container tittle="To Do List">
-            <ClickCounter incrementValue={5} onCounterChange={onCounterChange} />
+            <Counter />
         </Container>
     )
 }
