@@ -7,7 +7,7 @@ export default class Container extends React.Component {
                 <div className="text-2xl font-bold underline decoration-sky-500">
                     {this.props.tittle}
                 </div>
-                <div>
+                <div className="mt-3">
                     {this.props.children}
                 </div>
             </div>
