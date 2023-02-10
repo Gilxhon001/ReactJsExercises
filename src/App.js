@@ -1,12 +1,12 @@
 import React from "react";
+import { ClickCounter } from "./ClickCounter";
 import Container from "./Container";
-import GithubUserList from "./GithubUserList";
 
 const App = () => {
 
     return (
-        <Container tittle="GitHub User List">
-            <GithubUserList/>
+        <Container tittle="Counter">
+            <ClickCounter initialValue={0} />
         </Container>
     )
 }

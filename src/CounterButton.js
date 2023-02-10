@@ -1,9 +1,13 @@
 import React from "react";
 
-export default class CounterButton extends React.Component {
-    render() {
-        return (
-            <button onClick={this.props.handleInc}>Increment</button>
-        )
-    }
+const CounterButton = ({handleInc, handleDec, handleRes}) => {
+    return (
+            <>
+            <button onClick={handleInc}>Increment</button>
+            <button onClick={handleDec}>Decrement</button>
+            <button onClick={handleRes}>Reset</button>
+            </>
+    )
 }
+
+export default CounterButton ;
