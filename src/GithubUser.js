@@ -36,7 +36,7 @@ const GithubUser = (props) => {
   } 
 
   if (error) {
-    return <div>Loading...</div>;
+    return <div>An error occurred: {error.message}</div>;
   } 
 
   return (
