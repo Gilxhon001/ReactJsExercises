@@ -1,14 +1,12 @@
 import React from "react";
 import Container from "./Container";
-import Counter from "./Counter";
 import GithubUser from "./GithubUser";
 
 const App = () => {
 
     return (
-        <Container tittle="To Do List">
-            <Counter />
-            <GithubUser username="Gilxhon001"/>
+        <Container tittle="Custom Hooks">
+            <GithubUser username="urimahmetaj22"/>
         </Container>
     )
 }
