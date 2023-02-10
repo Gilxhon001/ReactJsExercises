@@ -6,7 +6,7 @@ const App = () => {
 
     return (
         <Container tittle="Custom Hooks">
-            <GithubUser username="urimahmetaj22"/>
+            <GithubUser username="gilxhon001"/>
         </Container>
     )
 }
