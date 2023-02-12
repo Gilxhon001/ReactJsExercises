@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 export const useCounter = (initialCount = 0) => {
   const [count, setCount] = useState(initialCount);
 
-  const increment = () => setCount(count + 1);
-  const decrement = () => setCount(count - 1);
-  const reset = () => setCount(initialCount);
+  const increment = useCallback(() => setCount(count => count + 1), []);
+  const decrement = useCallback(() => setCount(count => count - 1), []);
+  const reset = useCallback(() => setCount(initialCount), [initialCount]);
 
   return [count, increment, decrement, reset];
 }
+
 
 export const ClickCounter = ({initialValue}) => {
     
