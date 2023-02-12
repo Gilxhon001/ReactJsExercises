@@ -1,6 +1,6 @@
 import React from "react";
 import Container from "./Container";
-import DisplayLanguage from "./DisplayLanguage ";
+import DisplayLanguage from "./DisplayLanguage";
 import { LanguageContext } from "./LanguageContext";
 
 export class App extends React.Component {
@@ -13,6 +13,7 @@ export class App extends React.Component {
             language: event.target.value,
         })
     }
+
     render() {
         return (
             <Container tittle="Set Your Language">
