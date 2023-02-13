@@ -19,6 +19,8 @@ const App = () => {
             </Container>} />
 
             <Route path="/users/:username" element={<ShowGithubUser />} />
+
+            <Route path="*" element={<Container tittle="Not Found"/>} />
         </Routes>
 
         <br />
