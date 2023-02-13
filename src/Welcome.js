@@ -7,6 +7,10 @@ export const Welcome = ({name="Gilxhon", age=22}) => {
         <>
             <p>Welcome, {name}!</p>
             {age > 18 && <Age value={age} />}
+
+            <br />
+
+
         </>
     )
 }
