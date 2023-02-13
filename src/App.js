@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Container from "./Container";
 import { Welcome } from "./Welcome";
+import Counter from "./Counter"
 
 const App = () => {
 
@@ -12,7 +13,12 @@ const App = () => {
                         <Welcome />
                     </Container>
                 } />
-
+            
+            <Route path="/counter" element={
+                    <Container tittle="Counter">
+                        <Counter />
+                    </Container>
+                } />
         </Routes>
     )
 }
