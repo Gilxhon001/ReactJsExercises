@@ -6,12 +6,18 @@ import Counter from "./Counter";
 import GithubUserList from "./GithubUserList";
 import ShowGithubUser from "./ShowGithubUser"
 
-  
+
 
 const App = () => {
 
     return (
         <>
+            <div className="flex justify-center mt-5">
+                <Link className='bg-blue-500 text-white p-2 mr-2' to="/">Welcome</Link>
+                <Link className='bg-blue-500 text-white p-2 mr-2' to="/counter">Counter</Link>
+                <Link className='bg-blue-500 text-white p-2 mr-2' to="/users">Add Users</Link>
+            </div>
+            <br />
             <Routes>
                 <Route path="/" element={<Container tittle="Welcome">
                     <Welcome />
@@ -21,7 +27,7 @@ const App = () => {
                     <Counter />
                 </Container>} />
 
-                <Route exact path="/users" element={<Container tittle="Github Users">
+                <Route exact path="/users" element={<Container tittle="Github User List">
                     <GithubUserList />
                 </Container>} />
 
@@ -30,14 +36,6 @@ const App = () => {
 
                 <Route path="*" element={<Container tittle="Not Found" />} />
             </Routes>
-
-            <br />
-
-            <div className="flex justify-center">
-                <Link className='bg-blue-500 text-white p-2 mr-2' to="/">Welcome</Link>
-                <Link className='bg-blue-500 text-white p-2 mr-2' to="/counter">Counter</Link>
-                <Link className='bg-blue-500 text-white p-2 mr-2' to="/users">Add Users</Link>
-            </div>
         </>
 
 
