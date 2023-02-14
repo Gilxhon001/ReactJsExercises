@@ -27,10 +27,10 @@ const App = () => {
                     <Counter />
                 </Container>} />
 
-                <Route exact path="/users" element={<Container tittle="Github User List">
-                    <GithubUserList />
-                </Container>} />
-
+                <Route exact path="/users" element={
+                    <Container tittle="Github User List">
+                        <GithubUserList />
+                    </Container>} />
                 <Route path="/users/:username" element={<ShowGithubUser />} />
 
 
