@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Container from './Container';
 import GithubUser from './GithubUser';
 
@@ -19,10 +20,18 @@ const GithubUserList = () => {
                 <button className="bg-blue-500 text-white p-2 mr-2" type="submit">Add username</button>
             </form>
             {usernames.map(username => (
-                <Container tittle={username}>
-                    <GithubUser key={username} username={username} />
-                </Container>
+                <Link to={`/users/${username}`}>
+                    <Container tittle={username} key={username}>
+                        <GithubUser key={username} username={username} />
+                    </Container>
+                </Link>
+
+
             ))}
+            <ul>
+            </ul>
+
+
         </div>
     );
 };
