@@ -4,8 +4,7 @@ import Container from "./Container";
 import { Welcome } from "./Welcome";
 import Counter from "./Counter";
 import GithubUserList from "./GithubUserList";
-import GithubUser from "./GithubUser";
-
+import ShowGithubUser from "./ShowGithubUser"
 
   
 
@@ -26,9 +25,8 @@ const App = () => {
                     <GithubUserList />
                 </Container>} />
 
-                <Route path="/users/:username" element={<Container tittle="Github User:">
-                    <GithubUser />
-                </Container>} />
+                <Route path="/users/:username" element={<ShowGithubUser />} />
+
 
                 <Route path="*" element={<Container tittle="Not Found" />} />
             </Routes>
