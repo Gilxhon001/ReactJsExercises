@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 
 const useGithubUser = (username) => {
-  const { data, error } = useSWR(
+  const { data, error, mutate } = useSWR(
     username ? `https://api.github.com/users/${username}` : null
   );
 
@@ -9,6 +9,7 @@ const useGithubUser = (username) => {
     user: data,
     isLoading: !error && !data,
     isError: error,
+    refetch: mutate,
   };
 };
 
