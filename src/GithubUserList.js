@@ -11,9 +11,11 @@ const GithubUserList = () => {
 
     const addUsername = (event) => {
         event.preventDefault();
-        setUsernames([newUsername, ...usernames]);
-        setNewUsername('');
-        localStorage.setItem('usernames', JSON.stringify([newUsername, ...usernames]));
+        if (newUsername.trim() !== '') {
+            setUsernames([newUsername, ...usernames]);
+            setNewUsername('');
+            localStorage.setItem('usernames', JSON.stringify([newUsername, ...usernames]));
+          }
     };
 
 

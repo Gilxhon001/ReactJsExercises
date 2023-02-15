@@ -1,19 +1,19 @@
 import React from 'react';
-import useSWR from 'swr';
+import useGithubUser from './useGithubUser';
 
-const GithubUser = (props) => {
-  const { data, error } = useSWR(`https://api.github.com/users/${props.username}`)
+const GithubUser = ({username}) => {
+  const {user, isLoading, isError} = useGithubUser(username)
 
   return (
     <div>
-      {!data && !error && <h3>Loading...</h3>}
-      {error && <h3>An error has occurred</h3>}
-      {data && !error && <div>
-        <h1>{data.name}</h1>
-        <p>Username: {data.login}</p>
-        <p>Bio: {data.bio}</p>
-        <p>Location: {data.location}</p>
-        <p>Followers: {data.followers}</p>
+      {isLoading && <h3>Loading...</h3>}
+      {isError && <h3>An error has occurred</h3>}
+      {user && <div>
+        <h1>{user.name}</h1>
+        <p>Username: {user.login}</p>
+        <p>Bio: {user.bio}</p>
+        <p>Location: {user.location}</p>
+        <p>Followers: {user.followers}</p>
       </div>}
     </div>
   );
