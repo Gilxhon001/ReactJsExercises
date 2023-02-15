@@ -1,30 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import useSWR from 'swr';
 
 const GithubUser = (props) => {
-  const [userData, setUserData] = useState({});
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch(`https://api.github.com/users/${props.username}`)
-      .then(response => response.json())
-      .then(data => {
-        setUserData(data);
-        setLoading(false);
-      })
-      .catch(error => console.error(error));
-  }, [props.username]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  const { data, error } = useSWR(`https://api.github.com/users/${props.username}`)
 
   return (
     <div>
-      <h1>{userData.name}</h1>
-      <p>Username: {userData.login}</p>
-      <p>Bio: {userData.bio}</p>
-      <p>Location: {userData.location}</p>
-      <p>Followers: {userData.followers}</p>
+      {!data && !error && <h3>Loading...</h3>}
+      {error && <h3>An error has occurred</h3>}
+      {data && !error && <div>
+        <h1>{data.name}</h1>
+        <p>Username: {data.login}</p>
+        <p>Bio: {data.bio}</p>
+        <p>Location: {data.location}</p>
+        <p>Followers: {data.followers}</p>
+      </div>}
     </div>
   );
 };
